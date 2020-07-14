@@ -1,3 +1,5 @@
+![Summoning Stone](https://i.imgur.com/VQmPSVW.png)
+
 # Summon
 With this package you'll be able to generate boilerplate packages for your project right from the command line.
 
