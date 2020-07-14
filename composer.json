@@ -1,5 +1,5 @@
 {
-    "name": "arctic/wraith",
+    "name": "arctic/summon",
     "description": "Summon a Laravel Package Boilerplate for your next project.",
     "type": "library",
     "license": "MIT",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Arctic\\Wraith\\": "src"
+            "Arctic\\Summon\\": "src"
         }
     },
     "config": {
@@ -32,10 +32,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Arctic\\Wraith\\WraithServiceProvider"
+                "Arctic\\Summon\\SummonServiceProvider"
             ],
             "aliases": {
-                "Wraith": "Arctic\\Wraith\\WraithFacade"
+                "Summon": "Arctic\\Summon\\SummonFacade"
             }
         }
     },

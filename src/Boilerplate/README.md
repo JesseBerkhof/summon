@@ -1,3 +1,3 @@
 # Let's get started!
 
-This package has been summoned by Wraith.
+This package has been summoned by Summon.

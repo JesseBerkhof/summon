@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Wraith;
+namespace Arctic\Summon;
 
-class Wraith
+class Summon
 {
 }

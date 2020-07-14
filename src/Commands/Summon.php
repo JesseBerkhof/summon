@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Wraith\Commands;
+namespace Arctic\Summon\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -11,7 +11,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class Summon extends Command
 {
-    public $signature = 'wraith:summon {name}';
+    public $signature = 'summon {name}';
     public $description = 'Summon a new Package.';
 
     private array $files;
@@ -22,8 +22,8 @@ class Summon extends Command
     {
         parent::__construct();
 
-        $this->files = config('wraith.files');
-        $this->replacements = config('wraith.replacements');
+        $this->files = config('summon.files');
+        $this->replacements = config('summon.replacements');
     }
 
     public function handle(): void
@@ -110,7 +110,7 @@ class Summon extends Command
 
         $this->replacements[$attribute] = $this->ask(
             $question,
-            $replacement ?? config('wraith.replacements.'.$attribute)
+            $replacement ?? config('summon.replacements.'.$attribute)
         );
     }
 
@@ -140,7 +140,7 @@ class Summon extends Command
 
     private function setDestinationPath(): string
     {
-        return base_path(config('wraith.path') . '/' . $this->argument('name'));
+        return base_path(config('summon.path') . '/' . $this->argument('name'));
     }
 }
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Wraith;
+namespace Arctic\Summon;
 
-use Arctic\Wraith\Commands\Summon;
+use Arctic\Summon\Commands\Summon;
 use Illuminate\Support\ServiceProvider;
 
-class WraithServiceProvider extends ServiceProvider
+class SummonServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -18,11 +18,11 @@ class WraithServiceProvider extends ServiceProvider
             ]);
 
             $this->publishes([
-                __DIR__.'/../config/wraith.php' => config_path('wraith.php'),
+                __DIR__.'/../config/summon.php' => config_path('summon.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__.'/../app/Console/Commands' => base_path('Commands/Wraith'),
+                __DIR__.'/../app/Console/Commands' => base_path('Commands/Summon'),
             ], 'commands');
         }
     }
@@ -30,7 +30,7 @@ class WraithServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/wraith.php', 'wraith'
+            __DIR__.'/config/summon.php', 'summon'
         );
     }
 }

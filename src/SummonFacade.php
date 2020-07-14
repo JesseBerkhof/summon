@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Wraith;
+namespace Arctic\Summon;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Arctic\Wraith\Wraith
+ * @see \Arctic\Summon\Summon
  */
-class WraithFacade extends Facade
+class SummonFacade extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'wraith';
+        return 'summon';
     }
 }
