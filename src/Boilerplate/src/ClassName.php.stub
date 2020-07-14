@@ -1,0 +1,9 @@
+<?php
+
+declare(strict_types=1);
+
+namespace :namespace\:class_name;
+
+class :class_name
+{
+}

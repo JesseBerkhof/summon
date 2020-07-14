@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace :namespace\:class_name;
+
+use Illuminate\Support\ServiceProvider;
+
+class :class_nameServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        if ($this->app->runningInConsole())
+        {
+            $this->publishes([
+                __DIR__.'/../config/:package_name.php' => config_path(':package_name.php'),
+            ], 'config');
+        }
+    }
+
+    public function register(): void
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/config/:package_name.php', ':package_name'
+        );
+    }
+}

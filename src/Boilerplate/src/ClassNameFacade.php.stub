@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace :namespace\:class_name;
+
+use Illuminate\Support\Facades\Facade;
+
+/**
+ * @see \:namespace\:class_name\:class_name
+ */
+class :class_nameFacade extends Facade
+{
+    protected static function getFacadeAccessor(): string
+    {
+        return ':package_name';
+    }
+}
