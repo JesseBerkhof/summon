@@ -2,6 +2,9 @@
 
 All notable changes to Summon will be documented in this file
 
+## 1.1.1 - 07-29-2020
+- Update: README.md [patch]
+
 ## 1.1.0 - 07-29-2020
 - Update: Namespaces [minor]
 - Update: README.md [patch]
