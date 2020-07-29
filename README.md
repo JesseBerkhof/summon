@@ -11,7 +11,7 @@ Add the repository to your `composer.json` file:
 ```
 "repositories": [
     {
-        "type": "git",
+        "type": "vcs",
         "url": "https://github.com/jesseberkhof/summon.git"
     }
 ],
@@ -19,7 +19,7 @@ Add the repository to your `composer.json` file:
 
 Install the package via composer:
 ```
-composer require jesseberkhof/summon
+$ composer require jesseberkhof/summon
 ```
 For development it's best to symlink the packages. By default we will store the packages in `/packages`,
 so make sure to add the following lines to `composer.json` to enable symlinking:
@@ -28,7 +28,7 @@ so make sure to add the following lines to `composer.json` to enable symlinking:
 "repositories": [
     {
         "type": "path",
-        "url": "/packages/*/*",
+        "url": "packages/*",
         "symlink": true
     }
 ]
@@ -36,17 +36,18 @@ so make sure to add the following lines to `composer.json` to enable symlinking:
 
 The config file can be published with:
 ```
-php artisan vendor:publish --provider="JesseBerkhof\Summon\SummonServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="JesseBerkhof\Summon\SummonServiceProvider" --tag="config"
 ```
 
 ## Usage
 
+Create a new package with the following command:
 ```
-php artisan summon [PACKAGE NAME]
+$ php artisan summon [PACKAGE NAME]
 ```
 
 You will be asked a couple of questions to set some author details and the namespace for your package.
-Some of these values can be added to the config file so they will be set by default
+Some of these values can be added to the config file so they will be set by default:
 
 ```php
 return [
@@ -67,6 +68,13 @@ return [
     ]
 ];
 ```
+
+Require your package like so:
+```
+$ composer require [namespace]/[package_name]
+```
+
+🎉 That's it. With symlink enabled you should be ready to go with developing new Laravel packages within your project in no time.
 
 ## License
 
