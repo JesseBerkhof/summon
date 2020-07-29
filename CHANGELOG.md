@@ -2,6 +2,10 @@
 
 All notable changes to Summon will be documented in this file
 
+## 1.2.1 - 07-29-2020
+- Update: Changed command signature for creating packages to: `summon:new [name]` [minor]
+- Added: New command for listing packages with `summon:list` [minor]
+
 ## 1.1.1 - 07-29-2020
 - Update: README.md [patch]
 

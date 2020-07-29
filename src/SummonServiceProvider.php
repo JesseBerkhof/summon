@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace JesseBerkhof\Summon;
 
-use JesseBerkhof\Summon\Commands\Summon;
+use JesseBerkhof\Summon\Commands\SummonList;
+use JesseBerkhof\Summon\Commands\SummonNew;
 use Illuminate\Support\ServiceProvider;
 
 class SummonServiceProvider extends ServiceProvider
@@ -14,7 +15,8 @@ class SummonServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole())
         {
             $this->commands([
-                Summon::class,
+                SummonNew::class,
+                SummonList::class,
             ]);
 
             $this->publishes([

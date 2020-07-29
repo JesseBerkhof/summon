@@ -9,9 +9,19 @@ use Illuminate\Support\Str;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
-class Summon extends Command
+class SummonNew extends Command
 {
-    public $signature = 'summon {name}';
+    /**
+     * The name and signature of the console command.
+     * @var string
+     */
+    public $signature = 'summon:new
+                         {name : The name of your package}';
+
+    /**
+     * The console command description.
+     * @var string
+     */
     public $description = 'Summon a new Package.';
 
     private array $files;
@@ -145,4 +155,3 @@ class Summon extends Command
         return base_path(config('summon.path') . '/' . $this->argument('name'));
     }
 }
-
