@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Summon;
+namespace JesseBerkhof\Summon;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Arctic\Summon\Summon
+ * @see \JesseBerkhof\Summon\Summon
  */
 class SummonFacade extends Facade
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Summon;
+namespace JesseBerkhof\Summon;
 
-use Arctic\Summon\Commands\Summon;
+use JesseBerkhof\Summon\Commands\Summon;
 use Illuminate\Support\ServiceProvider;
 
 class SummonServiceProvider extends ServiceProvider

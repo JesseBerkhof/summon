@@ -1,5 +1,5 @@
 {
-    "name": "arctic/summon",
+    "name": "jesseberkhof/summon",
     "description": "Summon a Laravel Package Boilerplate for your next project.",
     "type": "library",
     "license": "MIT",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Arctic\\Summon\\": "src"
+            "JesseBerkhof\\Summon\\": "src"
         }
     },
     "config": {
@@ -32,10 +32,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Arctic\\Summon\\SummonServiceProvider"
+                "JesseBerkhof\\Summon\\SummonServiceProvider"
             ],
             "aliases": {
-                "Summon": "Arctic\\Summon\\SummonFacade"
+                "Summon": "JesseBerkhof\\Summon\\SummonFacade"
             }
         }
     },

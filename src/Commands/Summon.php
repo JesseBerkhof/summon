@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Summon\Commands;
+namespace JesseBerkhof\Summon\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Arctic\Summon;
+namespace JesseBerkhof\Summon;
 
 class Summon
 {
