@@ -12,12 +12,12 @@ return [
         'namespace' => 'JesseBerkhof',
     ],
     'files' => [
+        '/README.MD',
+        '/CHANGELOG.md',
         '/composer.json',
         '/src/config/package.php',
         '/src/ClassName.php.stub',
         '/src/ClassNameFacade.php.stub',
         '/src/ClassNameServiceProvider.php.stub',
-        '/CHANGELOG.md',
-        '/README.MD',
     ]
 ];

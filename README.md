@@ -60,6 +60,8 @@ return [
         'namespace' => 'JesseBerkhof',
     ],
     'files' => [
+        '/README.MD',
+        '/CHANGELOG.md',
         '/composer.json',
         '/src/config/package.php',
         '/src/ClassName.php.stub',
