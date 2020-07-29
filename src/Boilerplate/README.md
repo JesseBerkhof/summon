@@ -1,3 +1,5 @@
-# Let's get started!
+# :package_name
 
-This package has been summoned by Summon.
+The start of something great!
+
+This package has been summoned by JesseBerkhof/Summon.

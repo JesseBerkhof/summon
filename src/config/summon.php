@@ -17,5 +17,7 @@ return [
         '/src/ClassName.php.stub',
         '/src/ClassNameFacade.php.stub',
         '/src/ClassNameServiceProvider.php.stub',
+        '/CHANGELOG.md',
+        '/README.MD',
     ]
 ];
