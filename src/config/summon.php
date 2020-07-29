@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'path' => '../packages', // Your packages will be stored here.
+    'path' => 'packages', // Your packages will be stored here.
     'replacements' => [
         'author_email' => 'jane@doe.com',
         'author_name' => 'Jane Doe',

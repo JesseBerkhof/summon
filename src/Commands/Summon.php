@@ -91,6 +91,8 @@ class Summon extends Command
         $this->askReplacement('Author Role');
         $this->askReplacement('Namespace');
 
+        $this->replacements['package_author'] = Str::lower($this->replacements['namespace']);
+
         $this->info('Replacing strings...');
 
         foreach ($this->files as $path) {

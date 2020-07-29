@@ -1,5 +1,5 @@
 {
-  "name": ":namespace/:class_name",
+  "name": ":package_author/:package_name",
   "description": ":package_description",
   "type": "library",
   "license": "MIT",

@@ -6,4 +6,8 @@ namespace :namespace\:class_name;
 
 class :class_name
 {
+    public static function version(): string
+    {
+        return config(':package_name.version');
+    }
 }
