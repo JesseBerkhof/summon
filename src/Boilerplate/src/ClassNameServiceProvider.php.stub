@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace :namespace\:class_name;
 
 use Illuminate\Support\ServiceProvider;
+use :namespace\:class_name\Commands\HelloWorldCommand;
 
 final class :class_nameServiceProvider extends ServiceProvider
 {
@@ -12,6 +13,10 @@ final class :class_nameServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole())
         {
+            $this->commands([
+                HelloWorldCommand::class,
+            ]);
+
             $this->publishes([
                 __DIR__.'/../config/:package_name.php' => config_path(':package_name.php'),
             ], 'config');

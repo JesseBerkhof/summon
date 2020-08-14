@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace :namespace\:class_name\Commands;
+
+use Illuminate\Console\Command;
+
+final class HelloWorldCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     * @var string
+     */
+    public $signature = ':package_name:check';
+
+    /**
+     * The console command description.
+     * @var string
+     */
+    public $description = 'Hello World!';
+
+    public function handle(): void
+    {
+        $this->info("Hello World! Time to build something amazing! \u{1F389}");
+    }
+}
