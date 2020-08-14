@@ -2,7 +2,12 @@
 
 All notable changes to Summon will be documented in this file
 
-## 1.3.0 - 07-29-2020
+## 1.3.1 - 14-08-2020
+- Hotfix: Updated README.md [patch]
+- Hotfix: Updated `files` order in config file [patch]
+- Hotfix: Changelog previous date [patch]
+
+## 1.3.0 - 14-08-2020
 - Added CONTRIBUTING.md [patch]
 - Added LICENSE.md [patch]
 - Added `final` to classes [minor]
