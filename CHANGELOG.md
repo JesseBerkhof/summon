@@ -2,6 +2,13 @@
 
 All notable changes to Summon will be documented in this file
 
+## 1.3.0 - 07-29-2020
+- Added CONTRIBUTING.md [patch]
+- Added LICENSE.md [patch]
+- Added `final` to classes [minor]
+- Restructured method order [minor]
+- Changed folder name to be lower case [minor]
+
 ## 1.2.1 - 07-29-2020
 - Update: Changed command signature for creating packages to: `summon:new [name]` [minor]
 - Added: New command for listing packages with `summon:list` [minor]
