@@ -61,6 +61,7 @@ return [
         '/src/ClassName.php.stub',
         '/src/ClassNameFacade.php.stub',
         '/src/ClassNameServiceProvider.php.stub',
+        '/src/Commands/HelloWorldCommand.php.stub',
         '/src/config/package.php',
     ]
 ];
