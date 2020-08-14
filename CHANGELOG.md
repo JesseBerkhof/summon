@@ -2,6 +2,10 @@
 
 All notable changes to Summon will be documented in this file
 
+## 1.4.0 - 14-08-2020
+- Added HelloWorldCommand [minor]
+- Added ask for star method [patch]
+
 ## 1.3.1 - 14-08-2020
 - Hotfix: Updated README.md [patch]
 - Hotfix: Updated `files` order in config file [patch]

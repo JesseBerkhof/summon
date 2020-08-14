@@ -71,6 +71,11 @@ Require your package like so:
 $ composer require [namespace]/[package_name]
 ```
 
+We've got you covered with a testing command:
+```
+$ php artisan [package_name]:check
+```
+
 🎉 That's it. With symlink enabled you should be ready to go with developing new Laravel packages within your project in no time.
 
 ## License
