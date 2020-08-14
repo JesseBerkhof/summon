@@ -53,13 +53,15 @@ return [
         'namespace' => 'JesseBerkhof',
     ],
     'files' => [
-        '/README.MD',
         '/CHANGELOG.md',
+        '/CONTRIBUTING.md',
+        '/LICENSE.md',
+        '/README.MD',
         '/composer.json',
-        '/src/config/package.php',
         '/src/ClassName.php.stub',
         '/src/ClassNameFacade.php.stub',
         '/src/ClassNameServiceProvider.php.stub',
+        '/src/config/package.php',
     ]
 ];
 ```
