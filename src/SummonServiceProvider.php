@@ -8,7 +8,7 @@ use JesseBerkhof\Summon\Commands\SummonList;
 use JesseBerkhof\Summon\Commands\SummonNew;
 use Illuminate\Support\ServiceProvider;
 
-class SummonServiceProvider extends ServiceProvider
+final class SummonServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {

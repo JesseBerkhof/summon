@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \:namespace\:class_name\:class_name
  */
-class :class_nameFacade extends Facade
+final class :class_nameFacade extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

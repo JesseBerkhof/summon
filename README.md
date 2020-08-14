@@ -13,6 +13,11 @@ Add the repository to your `composer.json` file:
     {
         "type": "vcs",
         "url": "https://github.com/jesseberkhof/summon.git"
+    },
+    {
+        "type": "path",
+        "url": "packages/*",
+        "symlink": true
     }
 ],
 ```
@@ -20,18 +25,6 @@ Add the repository to your `composer.json` file:
 Install the package via composer:
 ```
 $ composer require jesseberkhof/summon
-```
-For development it's best to symlink the packages. By default we will store the packages in `/packages`,
-so make sure to add the following lines to `composer.json` to enable symlinking:
-
-```
-"repositories": [
-    {
-        "type": "path",
-        "url": "packages/*",
-        "symlink": true
-    }
-]
 ```
 
 The config file can be published with:
