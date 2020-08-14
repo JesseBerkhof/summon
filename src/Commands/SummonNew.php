@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace JesseBerkhof\Summon\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
@@ -100,6 +101,10 @@ final class SummonNew extends Command
                 ));
             }
         }
+
+        if ($this->firstTimeSummoning()) {
+            $this->askGithubStar();
+        }
     }
 
     private function renameFiles(): void
@@ -153,5 +158,21 @@ final class SummonNew extends Command
     private function setDestinationPath(): string
     {
         return base_path(config('summon.path') . '/' . Str::lower($this->argument('name')));
+    }
+
+    private function askGithubStar(): void
+    {
+        $this->line("\n<options=bold>Congratulations, you've summoned your first package!</> 🎉🎉🎉\n");
+        if ($this->confirm('Would you like to show some love by starring the repo?')) {
+            exec('open https://github.com/jesseberkhof/summon');
+            $this->line("Thanks! It means a lot to me!");
+        } else {
+            $this->line("No problem, I hope you enjoy this package nonetheless...");
+        }
+    }
+
+    private function firstTimeSummoning(): bool
+    {
+        return count(File::directories(base_path(config('summon.path')))) <= 1;
     }
 }
