@@ -11,7 +11,7 @@ use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 
-class SummonList extends Command
+final class SummonList extends Command
 {
     /**
      * The name and signature of the console command.

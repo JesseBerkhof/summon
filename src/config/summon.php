@@ -14,6 +14,8 @@ return [
     'files' => [
         '/README.MD',
         '/CHANGELOG.md',
+        '/CONTRIBUTING.md',
+        '/LICENSE.md',
         '/composer.json',
         '/src/config/package.php',
         '/src/ClassName.php.stub',

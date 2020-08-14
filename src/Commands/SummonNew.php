@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
-class SummonNew extends Command
+final class SummonNew extends Command
 {
     /**
      * The name and signature of the console command.
@@ -61,31 +61,17 @@ class SummonNew extends Command
         $this->info('Your package has been summoned at ' . $this->destinationPath);
     }
 
-    private function renameFiles(): void
+    private function copyFiles(): void
     {
-        $this->info('Renaming files...');
-
-        $packageName = Str::lower($this->argument('name'));
-        $className = Str::ucfirst($this->argument('name'));
-
-        $newFileNames = str_replace(
-            ['ClassName', 'package', '.stub'],
-            [$className, $packageName, ''],
-            $this->files
-        );
-
-        $files = array_filter(array_combine($this->files, $newFileNames), static function ($key, $value) {
-            return $key !== $value;
-        }, ARRAY_FILTER_USE_BOTH);
+        $this->info('Copying default files...');
+        $packagePath = __DIR__.'/../Boilerplate';
 
         $filesystem = new Filesystem();
 
         try {
-            foreach ($files as $origin => $target) {
-                $filesystem->rename($this->destinationPath . $origin, $this->destinationPath . $target, true);
-            }
+            $filesystem->mirror($packagePath, $this->destinationPath);
         } catch (IOExceptionInterface $exception) {
-            $this->error($exception->getMessage());
+            $this->error('An error occurred while creating your directory at ' . $exception->getPath());
         }
     }
 
@@ -116,6 +102,34 @@ class SummonNew extends Command
         }
     }
 
+    private function renameFiles(): void
+    {
+        $this->info('Renaming files...');
+
+        $packageName = Str::lower($this->argument('name'));
+        $className = Str::ucfirst($this->argument('name'));
+
+        $newFileNames = str_replace(
+            ['ClassName', 'package', '.stub'],
+            [$className, $packageName, ''],
+            $this->files
+        );
+
+        $files = array_filter(array_combine($this->files, $newFileNames), static function ($key, $value) {
+            return $key !== $value;
+        }, ARRAY_FILTER_USE_BOTH);
+
+        $filesystem = new Filesystem();
+
+        try {
+            foreach ($files as $origin => $target) {
+                $filesystem->rename($this->destinationPath . $origin, $this->destinationPath . $target, true);
+            }
+        } catch (IOExceptionInterface $exception) {
+            $this->error($exception->getMessage());
+        }
+    }
+
     private function askReplacement(string $question, string $replacement = null): void
     {
         $attribute = Str::snake(strtolower($question));
@@ -124,20 +138,6 @@ class SummonNew extends Command
             $question,
             $replacement ?? config('summon.replacements.'.$attribute)
         );
-    }
-
-    private function copyFiles(): void
-    {
-        $this->info('Copying default files...');
-        $packagePath = __DIR__.'/../Boilerplate';
-
-        $filesystem = new Filesystem();
-
-        try {
-            $filesystem->mirror($packagePath, $this->destinationPath);
-        } catch (IOExceptionInterface $exception) {
-            $this->error('An error occurred while creating your directory at ' . $exception->getPath());
-        }
     }
 
     private function projectPathExists(): bool
@@ -152,6 +152,6 @@ class SummonNew extends Command
 
     private function setDestinationPath(): string
     {
-        return base_path(config('summon.path') . '/' . $this->argument('name'));
+        return base_path(config('summon.path') . '/' . Str::lower($this->argument('name')));
     }
 }

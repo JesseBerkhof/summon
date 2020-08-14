@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \JesseBerkhof\Summon\Summon
  */
-class SummonFacade extends Facade
+final class SummonFacade extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

@@ -6,7 +6,7 @@ namespace :namespace\:class_name;
 
 use Illuminate\Support\ServiceProvider;
 
-class :class_nameServiceProvider extends ServiceProvider
+final class :class_nameServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
