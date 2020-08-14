@@ -60,6 +60,10 @@ final class SummonNew extends Command
         $this->replaceStrings();
         $this->renameFiles();
         $this->info('Your package has been summoned at ' . $this->destinationPath);
+
+        if ($this->firstTimeSummoning()) {
+            $this->askGithubStar();
+        }
     }
 
     private function copyFiles(): void
@@ -100,10 +104,6 @@ final class SummonNew extends Command
                     $this->destinationPath . $path,
                 ));
             }
-        }
-
-        if ($this->firstTimeSummoning()) {
-            $this->askGithubStar();
         }
     }
 
