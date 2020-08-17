@@ -48,10 +48,7 @@ final class SummonNew extends Command
 
         $confirmMessage = 'Looks like this package already exists in your project. All files will be overwritten';
 
-        if (
-            $this->packageExists() &&
-            !$this->confirm($confirmMessage, false))
-        {
+        if ($this->packageExists() && !$this->confirm($confirmMessage, false)) {
             exit(0);
         }
 
@@ -98,7 +95,8 @@ final class SummonNew extends Command
 
         foreach ($this->files as $path) {
             foreach ($this->replacements as $search => $replace) {
-                exec(sprintf("sed -i '' 's/:%s/%s/g' %s",
+                exec(sprintf(
+                    "sed -i '' 's/:%s/%s/g' %s",
                     $search,
                     $replace,
                     $this->destinationPath . $path,

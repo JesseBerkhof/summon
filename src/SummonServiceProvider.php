@@ -12,8 +12,7 @@ final class SummonServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        if ($this->app->runningInConsole())
-        {
+        if ($this->app->runningInConsole()) {
             $this->commands([
                 SummonNew::class,
                 SummonList::class,
@@ -32,7 +31,8 @@ final class SummonServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/summon.php', 'summon'
+            __DIR__.'/config/summon.php',
+            'summon'
         );
     }
 }
