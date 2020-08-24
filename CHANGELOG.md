@@ -2,6 +2,9 @@
 
 All notable changes to Summon will be documented in this file
 
+## 1.4.2 - 25-08-2020
+- Fixed bug when replacing package descriptions [patch]
+
 ## 1.4.1 - 17-08-2020
 - Changed README.md [patch]
 
